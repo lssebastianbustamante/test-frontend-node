@@ -1,0 +1,496 @@
+.shop {
+    margin-bottom: 50px;
+    
+
+    &__breadcrumb {
+
+
+        
+        width: 100%;
+        margin-bottom: 30px;
+        padding: 0 20px;
+
+        @include breakpoints-up(large) {
+            padding: 0;
+            margin-bottom: 50px;
+            border-bottom: 1px solid $ligthGray;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 0;
+            padding-left: 0;
+
+            li {
+                p {
+                    font-size: $font-14;
+                    font-weight: normal;
+
+                    span {
+                        display: inline-block;
+                        background-image: url("../../images/icons/arrow.svg");
+                        width: 15px;
+                        height: 15px;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        margin-right: 19px;
+                        transform: rotate(180deg);
+
+                        @include breakpoints-up(large) {
+                            width: 10px;
+                            height: 10px;
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            margin-right: 5px;
+                            transform: none;
+                        }
+                    }
+                }
+
+                h1 {
+                    color: $black;
+                    font-size: $font-28;
+                    font-weight: normal;
+                    text-align: center;
+
+                    @include breakpoints-up(large) {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+
+    &__wrap {
+        flex-direction: row;
+        display: flex;
+
+        .left {
+            width: 350px;
+            flex-grow: 1;
+            padding-right: 10px;
+
+            p {
+                color: $black;
+                font-weight: normal;
+                font-size: $font-14;
+                text-transform: uppercase;
+            }
+
+            .sidebar {
+                aside {
+                    border-top: 1px solid $ligthGray;
+                    border-bottom: 1px solid $ligthGray;
+
+                    ul {
+                        list-style: none;
+                        padding: 0;
+
+                        li {
+                            :not(:last-child) {
+                                margin-bottom: 20px;
+                            }
+
+                            input {
+                                margin: 0;
+                            }
+                        }
+
+                        li > label {
+                            margin-left: 10px;
+                            font-size: $font-14;
+                            color: $gray;
+                            font-weight: normal;
+                            text-transform: capitalize;
+                        }
+                    }
+                }
+            }
+        }
+
+        .right {
+            width: 100%;
+
+            @include breakpoints-up(large) {
+                flex-grow: 9;
+                width: 100%;
+                margin-left: 40px;
+            }
+
+            .product {
+                margin: o auto;
+                .product__grid {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    justify-content: center;
+
+                    .btn {
+                        margin-top: 20px;
+                    }
+                }
+
+                &__sort-mobile {
+                    flex-direction: row;
+                    width: 100%;
+                    height: 55px;
+                    padding: 0;
+                    margin-bottom: 30px;
+
+                    a {
+                        flex-grow: 5;
+                        text-align: center;
+                        border-top: 1px solid;
+                        border-bottom: 1px solid;
+                        padding: 25.5px;
+                        text-transform: uppercase;
+                        font-size: $font-12;
+
+                        &:nth-child(1) {
+                            border-right: 0.5px solid;
+                        }
+
+                        
+                        &:nth-child(2) {
+                            border-left: 0.5px solid;
+                        }
+                        span {
+                            display: inline-block;
+                            width: 9px;
+                            height: 7px;
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            margin-left: 19px;
+    
+                        }
+                    }
+
+                    .overlay {
+                        height: 100%;
+                        width: 0;
+                        position: fixed;
+                        z-index: 1;
+                        top: 0;
+                        left: 0;
+                        background-color: $white;
+                        overflow-x: hidden;
+                        transition: 0.5s;
+
+                        a {
+                            &::after {
+                                position: absolute;
+                                content: "";
+                                background-image: url("../../images/icons/close-mobile.svg");
+                                color: $black;
+                                font-size: 70px;
+                                float: right;
+                                margin-left: 5px;
+                                float: right;
+                                top: 26px;
+                                right: 10px;
+                                border: none !important;
+                                width: 40px;
+                                height: 40px;
+                                background-repeat: no-repeat;
+                            }
+
+                            border: none !important;
+                        }
+
+                        &__content {
+                            margin: 0 auto;
+                            p {
+                                margin: 0;
+                                margin-left: 18px;
+                                font-size: $font-28;
+                                font-weight: 300;
+                                &::first-letter {
+                                    text-transform: uppercase;
+                                }
+                            }
+                        }
+                        .swatches {
+                           
+                            display: flex;
+                            flex-direction: column;
+                            margin-top: 20px;
+                            padding: 0 20px;
+                            .size {
+                                width: 100%;
+                                border-bottom: 1px solid $ligthGray;
+                                p {
+                                    font-size: $font-15;
+                                    margin-left: 0;
+                                }
+    
+                                ul {
+                                    
+                                    list-style: none;
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    padding: 0;
+                                    margin-left: 9px;
+
+                                    li {
+                                        margin-bottom: 18px;
+                                        width: 20%;
+                                        
+                                    
+                                       > input {
+                                            display: none;
+                                            outline: $black;
+
+                                        }
+    
+                                        >  label {
+                                            border-radius: 50%;
+                                            cursor: pointer;
+                                            border: 1px solid $gray;
+                                            color: $darkGray;
+                                            
+                                            display: block;
+                                            height: 55px;
+                                            width: 55px;
+                                            padding-top: 18px;
+                                            text-align: center;
+                                            &:hover{
+                                                font-weight: 600 !important;
+                                                border: 2px solid $darkGray !important;
+                                            }                                            
+                                        }
+
+                                        
+                                    }
+                                }
+                            }
+
+                            .color {
+                                width: 100%;
+                                border-bottom: 1px solid $ligthGray;
+                                margin-top: 10px;
+
+                                p {
+                                    font-size: $font-15;
+                                    margin-left: 0;
+                                }
+    
+                                ul {
+                                    
+                                    list-style: none;
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    padding: 0;
+                                    margin-left: 9px;
+
+                                    li {
+                                        margin-bottom: 18px;
+                                        width: 20%;
+                                        
+                                    
+                                       > input {
+                                            display: none;
+                                            outline: $black;
+
+                                        }
+    
+                                        >  label {
+                                            cursor: pointer;
+                                            border: 1px solid $gray;
+                                            color: $darkGray;
+                                            background-color: $bgGray;
+                                            display: block;
+                                            height: 77px;
+                                            width: 53px;
+                                            padding-top: 18px;
+                                            text-align: center;    
+                                            &:hover {
+                                                font-weight: 600 !important;
+                                                border: 2px solid $red !important;
+                                            }                                        
+                                        }
+
+                                        
+                                    }
+                                }
+                            }
+
+                            .precio {
+                                width: 100%;
+                                border-bottom: 1px solid $ligthGray;
+                                margin-top: 10px;
+                                flex-direction: column;
+                                p {
+                                    font-size: $font-15;
+                                    margin-left: 0;
+                                }
+    
+                                ul {
+                                    
+                                    list-style: none;
+                                    display: flex;
+                                    flex-direction: row;
+                                    padding: 0;
+                               
+
+                                    li {
+                                        margin-bottom: 18px;
+                                        width: 20%;
+                                        
+                                    
+                                       > input {
+                                            display: none;
+                                            outline: $black;
+                                            position: relative;
+                                        }
+    
+                                        >  label {
+                                            position: absolute;
+                                            border-radius: 50%;
+                                            cursor: pointer;
+                                            border: 1px solid $gray;
+                                            color: $darkGray;
+                                            background-color: $bgGray;
+                                            display: block;
+                                            height: 22px;
+                                            width: 22px;
+                                            
+                                            text-align: center;    
+                                            &:hover {
+                                                font-weight: 600 !important;
+                                                border: 2px solid $red !important;
+                                            }                                        
+                                        }
+
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &__top-sort-by {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    padding: 0 20px;
+                    margin: 0;
+                    list-style: none;
+                    margin-bottom: 10px;
+
+                    @include breakpoints-up(large) {
+                        padding: 0;
+                        margin-bottom: 0;
+                    }
+
+                    select {
+                        border: none;
+                        text-transform: capitalize;
+                        font-size: $font-15;
+                        color: $darkGray;
+
+                        &:focus {
+                            outline: none;
+                        }
+
+                        option {
+                            text-transform: capitalize;
+                        }
+                    }
+
+                    p {
+                        display: inline-block;
+                        color: $darkGray;
+                        text-transform: uppercase;
+                        font-size: $font-14;
+                        letter-spacing: 1.3px;
+                    }
+                }
+
+                &__item {
+                    width: 100%;
+                    height: 515px;
+                    padding: 0 20px;
+                    @include breakpoints-up(large) {
+                        width: 32.9%;
+                        height: 515px;
+                        margin: 5px 2px;
+                        padding: 0;
+                    }
+                }
+
+                &__image {
+                    position: relative;
+                    img {
+                        width: 100%;
+                        height: 419px;
+                    }
+                    p {
+                        position: absolute;
+                        top: 0px;
+                        right: 0;
+                        margin: 0;
+                        padding: 5px;
+                        font-size: $font-11;
+                        color: $white;
+                        background-color: $black;
+                        text-align: center;
+                        text-transform: uppercase;
+                    }
+                }
+
+                &__detail {
+                    p {
+                        padding: 0;
+                        margin-left: 0;
+                        margin-top: 0;
+                        margin-bottom: 0;
+                    }
+
+                    .title {
+                        text-transform: uppercase;
+                        font-size: $font-14;
+                        margin-top: 2px;
+                        margin-bottom: 15px;
+                    }
+                    .price {
+                        display: flex;
+                        flex-direction: column;
+                        @include breakpoints-up(large) {
+                            display: block;
+                        }
+                        font-size: $font-15;
+                        font-weight: 500;
+                        margin-bottom: 5px;
+
+                        > span {
+                            text-decoration-line: line-through;
+                            font-size: $font-11;
+                            color: $gray;
+                            margin-right: 10px;
+                        }
+                    }
+
+                    .cuotas {
+                        font-size: $font-12;
+                        color: $red;
+                        text-transform: capitalize;
+                        font-weight: 600;
+
+                        @include breakpoints-up(large) {
+                            font-weight: normal;
+                        }
+
+                        span {
+                            text-transform: none;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+

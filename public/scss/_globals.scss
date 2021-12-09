@@ -1,0 +1,90 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+    
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Public Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+// Flexbox
+.flex {
+    display: flex;
+  
+    //Class Helps
+    &-jc-sb {
+      justify-content: space-between;
+    }
+  
+    &-jc-c {
+      justify-content: center;
+    }
+  
+    &-ai-c {
+      align-items: center;
+    }
+  
+  
+  }
+
+  // Botones
+  .btn {
+    display: block;
+    width: 178px;
+    background-color: $black;
+    color: $white;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: $font-14;
+    line-height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-white {
+  width: 121px;
+  height: 55px;
+  background-color: $white;
+  color: $black;
+  font-size: $font-14;
+  line-height: 40px;
+  border-radius: 5px;
+  margin-top: 65px !important;
+  text-transform: capitalize;
+}
+
+// Visibiñity
+.hide-for-mobile {
+  // hide for table and mobile
+  @include breakpoints-down(medium){
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  // hide for desktop viewport widths
+  @include breakpoints-up(large){
+    display: none;
+  }
+}
+
+.colorOvermouse {
+  color: $red !important;
+}
