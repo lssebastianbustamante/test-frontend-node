@@ -457,18 +457,27 @@
                     .price {
                         display: flex;
                         flex-direction: column;
-                        @include breakpoints-up(large) {
-                            display: block;
-                        }
-                        font-size: $font-15;
-                        font-weight: 500;
+
                         margin-bottom: 5px;
 
-                        > span {
+                        @include breakpoints-up(large) {
+                            flex-direction: row;
+                            align-items: center;
+                        }
+
+                        p {
                             text-decoration-line: line-through;
                             font-size: $font-11;
                             color: $gray;
                             margin-right: 10px;
+
+                            &:last-child {
+                                font-size: $font-15;
+                                font-weight: 400;
+
+                                text-decoration-line: none;
+                                color: $black;
+                            }
                         }
                     }
 
